@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Stripe
 {
@@ -36,5 +37,23 @@ namespace Stripe
 
         [JsonProperty("timezone")]
         public string Timezone { get; set; }
+
+        [JsonProperty("managed")]
+        public bool Managed { get; set; }
+
+        [JsonProperty("bank_accounts")]
+        public StripeBankAccountList BankAccounts { get; set; }
+
+        [JsonProperty("debit_negative_balances")]
+        public bool DebitNegativeBalances { get; set; }
+
+        [JsonProperty("tos_acceptance")]
+        public StripeTosAcceptance TosAcceptance { get; set; }
+
+        [JsonProperty("legal_entity")]
+        public StripeLegalEntity LegalEntity { get; set; }
+
+        [JsonProperty("metadata")]
+        public Dictionary<string, string> Metadata { get; set; }
     }
 }

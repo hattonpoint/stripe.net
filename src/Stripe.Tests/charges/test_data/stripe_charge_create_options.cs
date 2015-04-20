@@ -101,6 +101,18 @@ namespace Stripe.Tests.test_data
             };
         }
 
+        public static StripeChargeCreateOptions ValidSource(string customerId, string sourceId)
+        {
+            return new StripeChargeCreateOptions()
+            {
+                Description = "Nick Potpie",
+                Amount = 4845,
+                Currency = "usd",
+                CustomerId = customerId,
+                Source = sourceId
+            };
+        }
+
         public static StripeChargeCreateOptions ValidToken(string _tokenId)
         {
             return new StripeChargeCreateOptions()
