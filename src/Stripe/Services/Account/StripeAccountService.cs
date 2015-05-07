@@ -8,7 +8,7 @@ namespace Stripe
 
         public virtual StripeAccount Create(StripeAccountCreateOptions createOptions)
         {
-            var url = this.ApplyAllParameters(createOptions, Urls.Account, false);
+            var url = this.ApplyAllParameters(createOptions, Urls.Accounts, false);
 
             var response = Requestor.PostString(url, ApiKey);
 
@@ -17,8 +17,7 @@ namespace Stripe
 
         public virtual StripeAccount Get(string accountId)
         {
-            var url = string.Format("{0}/{1}", Urls.Account, accountId);
-            url = this.ApplyAllParameters(null, url, false);
+            var url = string.Format("{0}/{1}", Urls.Accounts, accountId);
 
             var response = Requestor.GetString(url, ApiKey);
 
@@ -27,7 +26,7 @@ namespace Stripe
 
         public virtual StripeAccount Update(string accountId, StripeAccountUpdateOptions updateOptions)
         {
-            var url = string.Format("{0}/{1}", Urls.Account, accountId);
+            var url = string.Format("{0}/{1}", Urls.Accounts, accountId);
             url = this.ApplyAllParameters(updateOptions, url, false);
 
             var response = Requestor.PostString(url, ApiKey);
@@ -37,14 +36,14 @@ namespace Stripe
 
         public virtual void Delete(string accountId)
         {
-            var url = string.Format("{0}/{1}", Urls.Account, accountId);
+            var url = string.Format("{0}/{1}", Urls.Accounts, accountId);
 
             Requestor.Delete(url, ApiKey);
         }
 
         public virtual IEnumerable<StripeAccount> List(StripeListOptions listOptions = null)
         {
-            var url = Urls.Account;
+            var url = Urls.Accounts;
             url = this.ApplyAllParameters(listOptions, url, true);
 
             var response = Requestor.GetString(url, ApiKey);

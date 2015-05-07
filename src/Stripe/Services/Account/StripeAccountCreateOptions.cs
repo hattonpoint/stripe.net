@@ -28,10 +28,13 @@ namespace Stripe
         public bool DebitNegativeBalances { get; set; }
 
         [JsonProperty("tos_acceptance")]
-        public StripeTosAcceptance TosAcceptance { get; set; }
+        public StripeTosAcceptanceOptions TosAcceptance { get; set; }
 
         [JsonProperty("legal_entity")]
-        public StripeLegalEntity LegalEntity { get; set; }
+        public StripeLegalEntityOptions LegalEntity { get; set; }
+
+        [JsonProperty("transfer_schedule")]
+        public StripeTransferScheduleOptions TransferSchedule { get; set; }
 
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata { get; set; }

@@ -1,12 +1,14 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Stripe.Infrastructure;
 
 namespace Stripe
 {
     public class StripeTosAcceptance
     {
         [JsonProperty("date")]
-        public DateTime Date { get; set; }
+        [JsonConverter(typeof(StripeDateTimeConverter))]
+        public DateTime? Date { get; set; }
 
         [JsonProperty("ip")]
         public string IP { get; set; }

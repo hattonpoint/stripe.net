@@ -65,8 +65,10 @@
     <Compile Include="Entities\StripeTosAcceptance.cs" />
     <Compile Include="Entities\StripeTransferReversal.cs" />
     <Compile Include="Constants\StripeRefundReasons.cs" />
+    <Compile Include="Entities\StripeTransferSchedule.cs" />
     <Compile Include="Infrastructure\ExpandableProperty.cs" />
     <Compile Include="Services\Account\StripeAccountCreateOptions.cs" />
+    <Compile Include="Services\Account\StripeAccountGetOptions.cs" />
     <Compile Include="Services\Account\StripeAccountListOptions.cs" />
     <Compile Include="Services\Account\StripeAccountUpdateOptions.cs" />
     <Compile Include="Services\Balance\StripeBalanceTransactionListOptions.cs" />
@@ -144,8 +146,11 @@
     <Compile Include="Services\Recipients\StripeRecipientCreateOptions.cs" />
     <Compile Include="Services\Recipients\StripeRecipientService.cs" />
     <Compile Include="Services\Recipients\StripeRecipientUpdateOptions.cs" />
+    <Compile Include="Services\StripeLegalEntityOptions.cs" />
     <Compile Include="Services\StripeListOptions.cs" />
     <Compile Include="Services\StripeService.cs" />
+    <Compile Include="Services\StripeTosAcceptanceOptions.cs" />
+    <Compile Include="Services\StripeTransferScheduleOptions.cs" />
     <Compile Include="Services\Subscriptions\StripeSubscriptionUpdateOptions.cs" />
     <Compile Include="Services\Subscriptions\StripeSubscriptionService.cs" />
     <Compile Include="Services\Subscriptions\StripeSubscriptionCreateOptions.cs" />

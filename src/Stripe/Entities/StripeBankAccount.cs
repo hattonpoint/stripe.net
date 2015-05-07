@@ -20,6 +20,9 @@ namespace Stripe
         [JsonProperty("status")]
         public string Status { get; set; }
 
+        [JsonProperty("routing_number")]
+        public string RoutingNumber { get; set; }
+
         [JsonProperty("bank_name")]
         public string BankName { get; set; }
 

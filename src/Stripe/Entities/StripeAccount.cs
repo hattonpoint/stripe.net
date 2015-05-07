@@ -53,6 +53,9 @@ namespace Stripe
         [JsonProperty("legal_entity")]
         public StripeLegalEntity LegalEntity { get; set; }
 
+        [JsonProperty("transfer_schedule")]
+        public StripeTransferSchedule TransferSchedule { get; set; }
+
         [JsonProperty("metadata")]
         public Dictionary<string, string> Metadata { get; set; }
     }

@@ -65,6 +65,22 @@ namespace Stripe
                             var creditCardOptions = (StripeCreditCardOptions)value;
                             newUrl = ApplyNestedObjectProperties(newUrl, creditCardOptions);
                         }
+                        else if (property.PropertyType == typeof(StripeTosAcceptanceOptions))
+                        {
+                            var ToSOptions = (StripeTosAcceptanceOptions)value;
+                            newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName + "[date]", ToSOptions.TosDate.ConvertDateTimeToEpoch().ToString());
+                            newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName + "[ip]", ToSOptions.TosIP);
+                        }
+                        else if (property.PropertyType == typeof(StripeLegalEntityOptions))
+                        {
+                            var legalEntityOptions = (StripeLegalEntityOptions)value;
+                            newUrl = ApplyNestedObjectProperties(newUrl, legalEntityOptions);
+                        }
+                        else if (property.PropertyType == typeof(StripeTransferScheduleOptions))
+                        {
+                            var transferScheduleOptions = (StripeTransferScheduleOptions)value;
+                            newUrl = ApplyNestedObjectProperties(newUrl, transferScheduleOptions);
+                        }
                         else
                         {
                             newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName, value.ToString());
