@@ -79,6 +79,17 @@ namespace Stripe
                         else if (property.PropertyType == typeof(StripeTransferScheduleOptions))
                         {
                             var transferScheduleOptions = (StripeTransferScheduleOptions)value;
+
+                            newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName + "[interval]", transferScheduleOptions.Interval);
+                            if(transferScheduleOptions.DelayDays.HasValue)
+                                newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName + "[delay_days]", transferScheduleOptions.DelayDays.Value.ToString());
+                            
+                            if (transferScheduleOptions.WeeklyAnchor.HasValue)
+                                newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName + "[delay_days]", transferScheduleOptions.WeeklyAnchor.Value.ToString());
+
+                            if (transferScheduleOptions.MonthlyAnchor.HasValue)
+                                newUrl = ApplyParameterToUrl(newUrl, attribute.PropertyName + "[delay_days]", transferScheduleOptions.MonthlyAnchor.Value.ToString());
+
                             newUrl = ApplyNestedObjectProperties(newUrl, transferScheduleOptions);
                         }
                         else

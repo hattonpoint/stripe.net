@@ -42,5 +42,29 @@ namespace Stripe
 
         [JsonProperty("legal_entity[address[country]]")]
         public string LegalEntityAddressCountry { get; set; }
+
+        [JsonProperty("legal_entity[personal_address[line1]]")]
+        public string LegalEntityPersonalAddressLine1 { get; set; }
+
+        [JsonProperty("legal_entity[personal_address[line2]]")]
+        public string LegalEntityPersonalAddressLine2 { get; set; }
+
+        [JsonProperty("legal_entity[personal_address[city]]")]
+        public string LegalEntityPersonalAddressCity { get; set; }
+
+        [JsonProperty("legal_entity[personal_address[state]]")]
+        public string LegalEntityPersonalAddressState { get; set; }
+
+        [JsonProperty("legal_entity[personal_address[postal_code]]")]
+        public string LegalEntityPersonalAddressPostalCode { get; set; }
+
+        [JsonProperty("legal_entity[personal_address[country]]")]
+        public string LegalEntityPersonalAddressCountry { get; set; }
+
+        [JsonProperty("legal_entity[ssn_last_4]")]
+        public string LegalEntitySsnLast4 { get; set; }
+
+        [JsonProperty("legal_entity[personal_id_number]")]
+        public string LegalEntityPersonalIdNumber { get; set; }
     }
 }
